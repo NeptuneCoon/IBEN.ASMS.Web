@@ -2,14 +2,14 @@
 
 namespace IBEN.ASMS.Web.Controllers
 {
-    public class CustomerController : Controller
+    public class IncomeController : Controller
     {
-        public IActionResult List()
+        public IActionResult Add()
         {
             return View();
         }
 
-        public IActionResult Add()
+        public IActionResult List()
         {
             return View();
         }

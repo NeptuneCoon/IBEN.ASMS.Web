@@ -1,0 +1,102 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@section header{
+    <div class="page-header d-print-none">
+        <div class="container-xl">
+            <div class="row g-2 align-items-center">
+                <div class="col">
+                    <div class="page-pretitle">财务管理</div>
+                    <h2 class="page-title">添加一笔收入</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="container-xl">
+    <div class="col-md-6">
+        <form class="card">
+            <div class="card-header">
+                <h3 class="card-title">收入单</h3>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="col-3 col-form-label required" >入账金额</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="0.00元">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-label">收入类型</div>
+                    <div>
+                        <label class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="radios-inline">
+                            <span class="form-check-label">合同款</span>
+                        </label>
+                        <label class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="radios-inline">
+                            <span class="form-check-label">合同定金</span>
+                        </label>
+                        <label class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="radios-inline">
+                            <span class="form-check-label">合同补款</span>
+                        </label>
+                        <label class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="radios-inline">
+                            <span class="form-check-label">材料款</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-label">支付方式</div>
+                    <div>
+                        <label class="form-check">
+                            <input class="form-check-input" type="radio" name="radios">
+                            <span class="form-check-label">支付宝</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="radio" name="radios">
+                            <span class="form-check-label">微信</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="radio" name="radios">
+                            <span class="form-check-label">现金</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="radio" name="radios">
+                            <span class="form-check-label">拉卡拉</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="radio" name="radios">
+                            <span class="form-check-label">pos机</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="radio" name="radios">
+                            <span class="form-check-label">对公转账</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="radio" name="radios">
+                            <span class="form-check-label">转账</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">入账时间</label>
+                    <div class="input-icon mb-2 col-md-4">
+                        <input class="form-control " placeholder="Select a date" id="datepicker-icon" value="2020-06-20">
+                        <span class="input-icon-addon">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M16 3l0 4"></path><path d="M8 3l0 4"></path><path d="M4 11l16 0"></path><path d="M11 15l1 0"></path><path d="M12 15l0 3"></path></svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-end">
+                <button type="submit" class="btn btn-primary">提交</button>
+            </div>
+        </form>
+    </div>
+</div>

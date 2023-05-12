@@ -1,0 +1,101 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@section header{
+    <div class="page-header d-print-none">
+        <div class="container-xl">
+            <div class="row g-2 align-items-center">
+                <div class="col">
+                    <div class="page-pretitle">客户管理</div>
+                    <h2 class="page-title">添加</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="container-xl">
+    <div class="col-md-6">
+        <form class="card">
+            <div class="card-header">
+                <h3 class="card-title">添加客户</h3>
+            </div>
+            <div class="card-body">
+                <div class="mb-3 row">
+                    <label class="col-3 col-form-label required">姓名</label>
+                    <div class="col">
+                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="请输入客户姓名">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-3 col-form-label required">项目地址</label>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="项目地址">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-3 col-form-label required">自述面积</label>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="面积" style="width:90px">
+                        <small class="form-hint">
+                        </small>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-3 col-form-label required">合同金额</label>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="金额" style="width:90px">
+                        <small class="form-hint">
+                        </small>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-3 col-form-label pt-0 required">施工内容</label>
+                    <div class="col">
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">客厅天花</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">客厅地面</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">客厅墙面</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">卫生间</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">厨房</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">卧室天花</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">卧室地面</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">卧室墙面</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">衣柜</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-end">
+                <button type="submit" class="btn btn-primary">提交</button>
+            </div>
+        </form>
+    </div>
+</div>

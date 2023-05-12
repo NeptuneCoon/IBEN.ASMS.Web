@@ -1,0 +1,87 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@section header{
+    <div class="page-header d-print-none">
+        <div class="container-xl">
+            <div class="row g-2 align-items-center">
+                <div class="col">
+                    <div class="page-pretitle">系统设置</div>
+                    <h2 class="page-title">字典维护</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="container-xl">
+    <div class="col-lg-4">
+        <h2>字典：施工内容</h2>
+        <div class="card">
+            @*            <div class="card-header">
+            <h3 class="card-title">施工内容</h3>
+            </div>*@
+
+            <div class="table-responsive">
+                <table class="table table-vcenter card-table">
+                    <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>客厅天花</td>
+                            <td>
+                                <a href="#">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>客厅地面</td>
+                            <td>
+                                <a href="#">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>客厅墙面</td>
+                            <td>
+                                <a href="#">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>卫生间</td>
+                            <td>
+                                <a href="#">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>厨房</td>
+                            <td>
+                                <a href="#">删除</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row g-2">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="输入要添加的内容">
+                </div>
+                <div class="col-auto">
+                    <a href="#" class="btn btn-icon" aria-label="Button">
+                        <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 5l0 14"></path>
+                            <path d="M5 12l14 0"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

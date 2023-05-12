@@ -8,13 +8,8 @@
         <div class="container-xl">
             <div class="row g-2 align-items-center">
                 <div class="col">
-                    <!-- Page pre-title -->
-                    <div class="page-pretitle">
-                        客户管理
-                    </div>
-                    <h2 class="page-title">
-                        列表
-                    </h2>
+                    <div class="page-pretitle">客户管理</div>
+                    <h2 class="page-title">列表</h2>
                 </div>
             </div>
         </div>
@@ -27,22 +22,18 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Invoices</h3>
+                    @*<h3 class="card-title">Invoices</h3>*@
+                    <a href="/Customer/Add" class="btn btn-outline-primary">
+                        添加
+                    </a>
                 </div>
                 <div class="card-body border-bottom py-3">
                     <div class="d-flex">
-                        <div class="text-muted">
-                            Show
-                            <div class="mx-2 d-inline-block">
-                                <input type="text" class="form-control form-control-sm" value="15" size="3" aria-label="Invoices count">
-                            </div>
-                            entries
+                        <div class="d-inline-block" style="width:300px">
+                            <input type="text" class="form-control form-control" aria-label="Search invoice" placeholder="请输入关键字">
                         </div>
-                        <div class="ms-auto text-muted">
-                            Search:
-                            <div class="ms-2 d-inline-block">
-                                <input type="text" class="form-control form-control-sm" aria-label="Search invoice">
-                            </div>
+                        <div class="ms-2 d-inline-block">
+                            <input type="button" class="btn" value="查询" />
                         </div>
                     </div>
                 </div>
@@ -57,7 +48,7 @@
                                 <th>合同金额</th>
                                 <th>自述面积</th>
                                 <th>施工内容</th>
-                                <th></th>
+                                <th>操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -79,17 +70,10 @@
                                 </td>
                                 <td>工阿斯蒂芬基材芷阿斯蒂芬</td>
                                 <td class="text-end">
-                                    <span class="dropdown">
-                                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">
-                                                Action
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                Another action
-                                            </a>
-                                        </div>
-                                    </span>
+                                    <div class="btn-list flex-nowrap">
+                                        <a href="#">编辑</a>
+                                        <a href="#">删除</a>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -110,17 +94,10 @@
                                 </td>
                                 <td>$1200</td>
                                 <td class="text-end">
-                                    <span class="dropdown">
-                                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">
-                                                Action
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                Another action
-                                            </a>
-                                        </div>
-                                    </span>
+                                    <div class="btn-list flex-nowrap">
+                                        <a href="#">编辑</a>
+                                        <a href="#">删除</a>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -141,17 +118,10 @@
                                 </td>
                                 <td>$534</td>
                                 <td class="text-end">
-                                    <span class="dropdown">
-                                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">
-                                                Action
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                Another action
-                                            </a>
-                                        </div>
-                                    </span>
+                                    <div class="btn-list flex-nowrap">
+                                        <a href="#">编辑</a>
+                                        <a href="#">删除</a>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -172,22 +142,14 @@
                                 </td>
                                 <td>$1500</td>
                                 <td class="text-end">
-                                    <span class="dropdown">
-                                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">
-                                                Action
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                Another action
-                                            </a>
-                                        </div>
-                                    </span>
+                                    <div class="btn-list flex-nowrap">
+                                        <a href="#">编辑</a>
+                                        <a href="#">删除</a>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                                <td><span class="text-muted">001405</span></td>
                                 <td><a href="invoice.html" class="text-reset" tabindex="-1">Marketing Templates</a></td>
                                 <td>
                                     <span class="flag flag-country-pl"></span>
@@ -204,17 +166,10 @@
                                 </td>
                                 <td>$648</td>
                                 <td class="text-end">
-                                    <span class="dropdown">
-                                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">
-                                                Action
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                Another action
-                                            </a>
-                                        </div>
-                                    </span>
+                                    <div class="btn-list flex-nowrap">
+                                        <a href="#">编辑</a>
+                                        <a href="#">删除</a>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -235,17 +190,10 @@
                                 </td>
                                 <td>$300</td>
                                 <td class="text-end">
-                                    <span class="dropdown">
-                                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">
-                                                Action
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                Another action
-                                            </a>
-                                        </div>
-                                    </span>
+                                    <div class="btn-list flex-nowrap">
+                                        <a href="#">编辑</a>
+                                        <a href="#">删除</a>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -266,17 +214,10 @@
                                 </td>
                                 <td>$2500</td>
                                 <td class="text-end">
-                                    <span class="dropdown">
-                                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">
-                                                Action
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                Another action
-                                            </a>
-                                        </div>
-                                    </span>
+                                    <div class="btn-list flex-nowrap">
+                                        <a href="#">编辑</a>
+                                        <a href="#">删除</a>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -297,24 +238,31 @@
                                 </td>
                                 <td>$940</td>
                                 <td class="text-end">
-                                    <span class="dropdown">
-                                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">
-                                                Action
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                Another action
-                                            </a>
-                                        </div>
-                                    </span>
+                                    <div class="btn-list flex-nowrap">
+                                        <a href="#">编辑</a>
+                                        <a href="#">删除</a>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="card-footer d-flex align-items-center">
-                    <p class="m-0 text-muted">Showing <span>1</span> to <span>8</span> of <span>16</span> entries</p>
+                    @*<p class="m-0 text-muted">Showing <span>1</span> to <span>8</span> of <span>16</span> entries</p>*@
+                    <div class="d-flex">
+                        <div class="text-muted">
+                            每页
+                            <div class="mx-2 d-inline-block">
+                                <select>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+                            条
+                        </div>
+                    </div>
+
                     <ul class="pagination m-0 ms-auto">
                         <li class="page-item disabled">
                             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
