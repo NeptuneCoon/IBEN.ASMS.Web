@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using IBEN.ASMS.Web.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace IBEN.ASMS.Web.Controllers
 {
@@ -12,6 +13,13 @@ namespace IBEN.ASMS.Web.Controllers
         public IActionResult Add()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(Customer customer)
+        {
+
+            return RedirectToAction("List", "Customer");
         }
     }
 }

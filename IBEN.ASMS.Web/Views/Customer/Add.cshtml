@@ -1,8 +1,6 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿
+@model IBEN.ASMS.Web.Models.Customer
+
 @section header{
     <div class="page-header d-print-none">
         <div class="container-xl">
@@ -18,7 +16,7 @@
 
 <div class="container-xl">
     <div class="col-md-6">
-        <form class="card">
+        <form id="customer_add" class="card" asp-action="Add" autocomplete="off">
             <div class="card-header">
                 <h3 class="card-title">添加客户</h3>
             </div>
@@ -26,68 +24,64 @@
                 <div class="mb-3 row">
                     <label class="col-3 col-form-label required">姓名</label>
                     <div class="col">
-                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="请输入客户姓名">
+                        <input type="text" asp-for="@Model.CustomerName" class="form-control" aria-describedby="emailHelp" placeholder="请输入客户姓名" autocomplete="off">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-3 col-form-label required">项目地址</label>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="项目地址">
+                        <input type="text" asp-for="ProjectAddr" class="form-control" placeholder="项目地址" autocomplete="off">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-3 col-form-label required">自述面积</label>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="面积" style="width:90px">
-                        <small class="form-hint">
-                        </small>
+                        <input type="text" asp-for="SelfStatementArea" class="form-control" placeholder="面积" style="width:120px" autocomplete="off">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-3 col-form-label required">合同金额</label>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="金额" style="width:90px">
-                        <small class="form-hint">
-                        </small>
+                        <input type="text" asp-for="ContractAmt" class="form-control" placeholder="金额" style="width:120px" autocomplete="off">
                     </div>
                 </div>
                 <div class="row">
                     <label class="col-3 col-form-label pt-0 required">施工内容</label>
                     <div class="col">
                         <label class="form-check">
-                            <input class="form-check-input" type="checkbox">
+                            <input class="form-check-input" type="checkbox" value="客厅天花" name="ConstructItems">
                             <span class="form-check-label">客厅天花</span>
                         </label>
                         <label class="form-check">
-                            <input class="form-check-input" type="checkbox">
+                            <input class="form-check-input" type="checkbox" value="客厅地面" name="ConstructItems">
                             <span class="form-check-label">客厅地面</span>
                         </label>
                         <label class="form-check">
-                            <input class="form-check-input" type="checkbox">
+                            <input class="form-check-input" type="checkbox" value="客厅墙面" name="ConstructItems">
                             <span class="form-check-label">客厅墙面</span>
                         </label>
                         <label class="form-check">
-                            <input class="form-check-input" type="checkbox">
+                            <input class="form-check-input" type="checkbox" value="卫生间" name="ConstructItems">
                             <span class="form-check-label">卫生间</span>
                         </label>
                         <label class="form-check">
-                            <input class="form-check-input" type="checkbox">
+                            <input class="form-check-input" type="checkbox" value="厨房" name="ConstructItems">
                             <span class="form-check-label">厨房</span>
                         </label>
                         <label class="form-check">
-                            <input class="form-check-input" type="checkbox">
+                            <input class="form-check-input" type="checkbox" value="卧室天花" name="ConstructItems">
                             <span class="form-check-label">卧室天花</span>
                         </label>
                         <label class="form-check">
-                            <input class="form-check-input" type="checkbox">
+                            <input class="form-check-input" type="checkbox" value="卧室地面" name="ConstructItems">
                             <span class="form-check-label">卧室地面</span>
                         </label>
                         <label class="form-check">
-                            <input class="form-check-input" type="checkbox">
+                            <input class="form-check-input" type="checkbox" value="卧室墙面" name="ConstructItems">
                             <span class="form-check-label">卧室墙面</span>
                         </label>
                         <label class="form-check">
-                            <input class="form-check-input" type="checkbox">
+                            <input class="form-check-input" type="checkbox" value="衣柜" name="ConstructItems">
                             <span class="form-check-label">衣柜</span>
                         </label>
                     </div>
@@ -99,3 +93,91 @@
         </form>
     </div>
 </div>
+
+@section Scripts{
+    <script type="text/javascript">
+        // validate 自定义手机号码的校验
+        jQuery.validator.addMethod("mobile", function (value, element) {
+            var length = value.length;
+            var res = /^(0|86|17951)?(13[0-9]|15[012356789]|16[6]|19[89]]|17[01345678]|18[0-9]|14[579])[0-9]{8}$/;
+            return this.optional(element) || res.test(value);
+        })
+
+        $('#customer_add').validate({
+            rules: {
+                // 此处规定校验规则
+                CustomerName: {
+                    required: true,
+                    maxlength: 15
+                },
+                ProjectAddr: {
+                    required: true,
+                    maxlength: 200
+                },
+                SelfStatementArea: {
+                    required: true,
+                    maxlength: 10
+                },
+                ContractAmt: {
+                    required: true,
+                    maxlength: 10 
+                },
+                ConstructItems:{
+                    required: true,
+                }
+            },
+            messages: {
+                // 校验错误的提示
+                CustomerName: {
+                    required: "请输入客户姓名",
+                    maxlength: "输入超出15个汉字"
+                },
+                ProjectAddr: {
+                    required: "请输入项目地址",
+                    maxlength: "输入超出200个字符"
+                },
+                SelfStatementArea: {
+                    required: "请输入自述面积",
+                    maxlength: "输入超出10个字符"
+                },
+                ContractAmt: {
+                    required: "请输入合同金额",
+                    mobile: "输入超出10个字符"
+                },
+                ConstructItems: {
+                    required: "请选择施工内容",
+                }
+            },
+            errorElement: "label",  // 错误提示元素
+            errorClass: "error",  // 错误提示元素class
+            errorPlacement: function (error, element) {
+                if (element.is(":radio")){
+
+                }
+                else if (element.is(":checkbox")){
+                    //error.appendTo(element.next());
+                    //$(element).addClass("is-invalid");
+                    error.appendTo(element.parent().parent());
+                    //$(error).css({ "style": "block" });
+                }
+                else {
+                    $(element).addClass("is-invalid");
+                    error.appendTo(element.parent());
+                    $(error).css({"style":"block"});
+                }
+            }
+        });
+
+        $().ready(function () {
+            $("#customer_add").find("input[type='text']").change(function(){
+                if($(this).val() != ""){
+                    $(this).removeClass("is-invalid");
+                }
+                else{
+                    $(this).addClass("is-invalid");
+                }
+            });
+        });
+       
+    </script>
+}
