@@ -1,7 +1,6 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model CustomerListModel
 @{
+    ViewData["Title"] = "客户列表";
 }
 @section header{
     <div class="page-header d-print-none">
@@ -20,6 +19,7 @@
 <div class="container-xl">
     <div class="row row-cards">
         <div class="col-12">
+            <form method="get" action="/Customer/List">
             <div class="card">
                 <div class="card-header">
                     @*<h3 class="card-title">Invoices</h3>*@
@@ -30,10 +30,10 @@
                 <div class="card-body border-bottom py-3">
                     <div class="d-flex">
                         <div class="d-inline-block" style="width:300px">
-                            <input type="text" class="form-control form-control" aria-label="Search invoice" placeholder="请输入关键字">
+                            <input type="text" class="form-control form-control" aria-label="Search invoice" placeholder="请输入关键字" asp-for="Param.key">
                         </div>
                         <div class="ms-2 d-inline-block">
-                            <input type="button" class="btn" value="查询" />
+                            <input type="submit" class="btn" value="查询" />
                         </div>
                     </div>
                 </div>
@@ -52,31 +52,34 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                                <td><a href="invoice.html" class="text-reset" tabindex="-1">刘佳丽</a></td>
-                                <td>
-                                    <span class="flag flag-country-us"></span>
-                                    湖北省武汉市江城区
-                                </td>
-                                <td>
-                                    105.6
-                                </td>
-                                <td>
-                                    12000.0
-                                </td>
-                                <td>
-                                    105.6
-                                </td>
-                                <td>工阿斯蒂芬基材芷阿斯蒂芬</td>
-                                <td class="text-end">
-                                    <div class="btn-list flex-nowrap">
-                                        <a href="#">编辑</a>
-                                        <a href="#">删除</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
+                            @foreach(var item in Model.Customers)
+                            {
+                                <tr>
+                                    <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
+                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">@item.CustomerName</a></td>
+                                    <td>
+                                        <span class="flag flag-country-us"></span>
+                                        @item.ProjectAddr
+                                    </td>
+                                    <td>
+                                        @item.ContractArea
+                                    </td>
+                                    <td>
+                                        @item.ContractAmt
+                                    </td>
+                                    <td>
+                                        @item.SelfStatementArea
+                                    </td>
+                                    <td>@item.ConstructItemsDisplayText</td>
+                                    <td class="text-end">
+                                        <div class="btn-list flex-nowrap">
+                                            <a href="#">编辑</a>
+                                            <a href="#">删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+@*                            <tr>
                                 <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
                                 <td><a href="invoice.html" class="text-reset" tabindex="-1">UX Wireframes</a></td>
                                 <td>
@@ -99,151 +102,8 @@
                                         <a href="#">删除</a>
                                     </div>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                                <td><a href="invoice.html" class="text-reset" tabindex="-1">New Dashboard</a></td>
-                                <td>
-                                    <span class="flag flag-country-de"></span>
-                                    Bluewolf
-                                </td>
-                                <td>
-                                    87952621
-                                </td>
-                                <td>
-                                    23 Oct 2017
-                                </td>
-                                <td>
-                                    <span class="badge bg-warning me-1"></span> Pending
-                                </td>
-                                <td>$534</td>
-                                <td class="text-end">
-                                    <div class="btn-list flex-nowrap">
-                                        <a href="#">编辑</a>
-                                        <a href="#">删除</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                                <td><a href="invoice.html" class="text-reset" tabindex="-1">Landing Page</a></td>
-                                <td>
-                                    <span class="flag flag-country-br"></span>
-                                    Salesforce
-                                </td>
-                                <td>
-                                    87953421
-                                </td>
-                                <td>
-                                    2 Sep 2017
-                                </td>
-                                <td>
-                                    <span class="badge bg-secondary me-1"></span> Due in 2 Weeks
-                                </td>
-                                <td>$1500</td>
-                                <td class="text-end">
-                                    <div class="btn-list flex-nowrap">
-                                        <a href="#">编辑</a>
-                                        <a href="#">删除</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                                <td><a href="invoice.html" class="text-reset" tabindex="-1">Marketing Templates</a></td>
-                                <td>
-                                    <span class="flag flag-country-pl"></span>
-                                    Printic
-                                </td>
-                                <td>
-                                    87956621
-                                </td>
-                                <td>
-                                    29 Jan 2018
-                                </td>
-                                <td>
-                                    <span class="badge bg-danger me-1"></span> Paid Today
-                                </td>
-                                <td>$648</td>
-                                <td class="text-end">
-                                    <div class="btn-list flex-nowrap">
-                                        <a href="#">编辑</a>
-                                        <a href="#">删除</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                                <td><a href="invoice.html" class="text-reset" tabindex="-1">Sales Presentation</a></td>
-                                <td>
-                                    <span class="flag flag-country-br"></span>
-                                    Tabdaq
-                                </td>
-                                <td>
-                                    87956621
-                                </td>
-                                <td>
-                                    4 Feb 2018
-                                </td>
-                                <td>
-                                    <span class="badge bg-secondary me-1"></span> Due in 3 Weeks
-                                </td>
-                                <td>$300</td>
-                                <td class="text-end">
-                                    <div class="btn-list flex-nowrap">
-                                        <a href="#">编辑</a>
-                                        <a href="#">删除</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                                <td><a href="invoice.html" class="text-reset" tabindex="-1">Logo & Print</a></td>
-                                <td>
-                                    <span class="flag flag-country-us"></span>
-                                    Apple
-                                </td>
-                                <td>
-                                    87956621
-                                </td>
-                                <td>
-                                    22 Mar 2018
-                                </td>
-                                <td>
-                                    <span class="badge bg-success me-1"></span> Paid Today
-                                </td>
-                                <td>$2500</td>
-                                <td class="text-end">
-                                    <div class="btn-list flex-nowrap">
-                                        <a href="#">编辑</a>
-                                        <a href="#">删除</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                                <td><a href="invoice.html" class="text-reset" tabindex="-1">Icons</a></td>
-                                <td>
-                                    <span class="flag flag-country-pl"></span>
-                                    Tookapic
-                                </td>
-                                <td>
-                                    87956621
-                                </td>
-                                <td>
-                                    13 May 2018
-                                </td>
-                                <td>
-                                    <span class="badge bg-success me-1"></span> Paid Today
-                                </td>
-                                <td>$940</td>
-                                <td class="text-end">
-                                    <div class="btn-list flex-nowrap">
-                                        <a href="#">编辑</a>
-                                        <a href="#">删除</a>
-                                    </div>
-                                </td>
-                            </tr>
+                            </tr>*@
+
                         </tbody>
                     </table>
                 </div>
@@ -253,7 +113,7 @@
                         <div class="text-muted">
                             每页
                             <div class="mx-2 d-inline-block">
-                                <select>
+                                <select asp-for="@Model.Param.ps">
                                     <option value="15">15</option>
                                     <option value="20">20</option>
                                     <option value="30">30</option>
@@ -285,6 +145,7 @@
                     </ul>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 </div>

@@ -5,7 +5,7 @@ namespace IBEN.ASMS.Web.Models
     /// <summary>
     /// 视图模型Customer
     /// </summary>
-    public class Customer
+    public class CustomerModel
     {
         /// <summary>
         /// 客户唯一编号
@@ -54,6 +54,11 @@ namespace IBEN.ASMS.Web.Models
         /// </summary>           
         [Required]
         public List<string>? ConstructItems { get; set; }
+
+        /// <summary>
+        /// 施工内容
+        /// </summary>
+        public string? ConstructItemsDisplayText { get; set; }
 
         /// <summary>
         /// 创建时间

@@ -1,5 +1,5 @@
 ﻿
-@model IBEN.ASMS.Web.Models.Customer
+@model IBEN.ASMS.Web.Models.CustomerModel
 
 @section header{
     <div class="page-header d-print-none">
@@ -16,7 +16,7 @@
 
 <div class="container-xl">
     <div class="col-md-6">
-        <form id="customer_add" class="card" asp-action="Add" autocomplete="off">
+        <form id="customer_add" method="post" class="card" action="AddHandler" autocomplete="off">
             <div class="card-header">
                 <h3 class="card-title">添加客户</h3>
             </div>
@@ -25,6 +25,12 @@
                     <label class="col-3 col-form-label required">姓名</label>
                     <div class="col">
                         <input type="text" asp-for="@Model.CustomerName" class="form-control" aria-describedby="emailHelp" placeholder="请输入客户姓名" autocomplete="off">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-3 col-form-label required">手机</label>
+                    <div class="col">
+                        <input type="text" asp-for="@Model.Mobile" class="form-control" aria-describedby="emailHelp" placeholder="请输入客户手机号" autocomplete="off">
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -114,6 +120,10 @@
                     required: true,
                     maxlength: 200
                 },
+                Mobile: {
+                    required: true,
+                    maxlength: 11
+                },
                 SelfStatementArea: {
                     required: true,
                     maxlength: 10
@@ -131,6 +141,9 @@
                 CustomerName: {
                     required: "请输入客户姓名",
                     maxlength: "输入超出15个汉字"
+                },
+                Mobile:{
+                    required: "请输入客户手机号",
                 },
                 ProjectAddr: {
                     required: "请输入项目地址",
